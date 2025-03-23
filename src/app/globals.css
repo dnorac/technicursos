@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+.grid-cols-chapter {
+  grid-template-columns: 1fr 65ch 1fr;
+  align-items: start;
+}
+
+body {
+  font-family: var(--font-sans);
+}

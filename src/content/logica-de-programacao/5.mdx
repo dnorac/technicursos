@@ -1,0 +1,93 @@
+---
+title: Estruturas de Controle de Fluxo
+---
+
+**Aventuras na Terra do Código: Explorando os Caminhos do Fluxo!**
+
+Olá, jovem programador! Hoje, vamos embarcar em uma nova aventura no mundo da programação. Imagine que você é um explorador em um jogo incrível, e para avançar pelos desafios, precisa tomar decisões e repetir algumas ações. Para isso, usamos as **estruturas de controle de fluxo**!
+
+### **1. O Caminho das Decisões – IF/ELSE**
+
+Imagine que você está em uma floresta encantada e encontra uma porta mágica. Para abrir a porta, você precisa responder a um enigma:
+
+- Se você tiver a chave de ouro, a porta se abre.
+- Se não tiver, um gnomo aparece e te dá um desafio!
+
+No código, isso ficaria assim:
+
+```java
+if (temChaveDeOuro) {
+    System.out.println("A porta se abriu! Você pode passar.");
+} else {
+    System.out.println("O gnomo aparece e te dá um desafio!");
+}
+```
+
+O **IF** verifica se algo é verdadeiro. Se for, ele segue por um caminho. Se não for, ele escolhe outro caminho!
+
+### **2. O Ciclo das Repetições – WHILE e FOR**
+
+Agora imagine que você precisa subir uma torre cheia de escadas. Em cada andar, há um enigma. Você só pode parar quando chegar ao topo! Isso pode ser feito com um **while**:
+
+```java
+int andar = 1;
+while (andar <= 10) {
+    System.out.println("Você está no andar " + andar);
+    andar++;
+}
+System.out.println("Você chegou ao topo!");
+```
+
+O **while** continua repetindo enquanto a condição for verdadeira. Quando o andar chega a 10, ele para.
+
+Agora, se já soubermos quantas vezes precisamos repetir, podemos usar um **for**. Por exemplo, se quisermos coletar 5 moedas mágicas:
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Você coletou a moeda número " + i);
+}
+System.out.println("Você coletou todas as moedas!");
+```
+
+O **for** é ótimo quando já sabemos quantas vezes algo deve se repetir!
+
+### **3. O Portal da Escolha – SWITCH**
+
+Imagine que você encontrou um baú do tesouro, mas ele tem diferentes fechaduras que exigem diferentes chaves:
+
+```java
+int chave = 2;
+switch (chave) {
+    case 1:
+        System.out.println("Você abriu o baú e encontrou um escudo mágico!");
+        break;
+    case 2:
+        System.out.println("Você encontrou uma espada brilhante!");
+        break;
+    case 3:
+        System.out.println("Você descobriu uma poção misteriosa!");
+        break;
+    default:
+        System.out.println("A chave não encaixa. Tente outra!");
+}
+```
+
+O **switch** é usado quando temos várias opções e queremos escolher a ação certa para cada uma.
+
+---
+
+### **Missão para você!**
+
+Agora que você conhece os segredos do controle de fluxo, tente criar um código onde um personagem precisa decidir entre três caminhos diferentes: um túnel escuro, uma ponte de madeira e um rio raso. Cada caminho leva a uma aventura diferente!
+
+Boa sorte, explorador do código! 🚀
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/T8lD3lh-u4A?si=9FWMPIDnrs80QtXG"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>

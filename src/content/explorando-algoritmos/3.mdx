@@ -1,0 +1,57 @@
+---
+title: Algoritmos de Busca - Caça ao Tesouro Perdido
+---
+
+Agora que sabemos armazenar dados, chegou a hora de aprender a **encontrá-los**! Imagine que você está procurando um tesouro escondido em uma ilha. Existem duas formas principais de busca: **busca linear** e **busca binária**.
+
+### **1. Busca Linear - Procurando de Forma Sequencial**
+
+Essa é a forma mais simples de busca: olhamos um por um até encontrar o que queremos.
+
+Exemplo em Java:
+
+```java
+int[] mapa = {3, 7, 1, 9, 5};
+int tesouro = 9;
+boolean encontrado = false;
+
+for (int i = 0; i < mapa.length; i++) {
+    if (mapa[i] == tesouro) {
+        encontrado = true;
+        break;
+    }
+}
+
+if (encontrado) {
+    System.out.println("Tesouro encontrado!");
+} else {
+    System.out.println("Tesouro não está aqui...");
+}
+```
+
+---
+
+### **2. Busca Binária - Procurando de Forma Inteligente**
+
+Se os itens estiverem ordenados, podemos **dividir o mapa ao meio** para encontrar o tesouro mais rápido!
+
+Exemplo:
+
+```java
+Arrays.sort(mapa);
+int indice = Arrays.binarySearch(mapa, tesouro);
+
+if (indice >= 0) {
+    System.out.println("Tesouro encontrado!");
+} else {
+    System.out.println("Tesouro não está aqui...");
+}
+```
+
+---
+
+### **Missão para você!**
+
+Crie um código que busque um **item escondido** dentro de uma lista de números e diga se ele foi encontrado ou não!
+
+Na próxima aula, vamos aprender a **ordenar os tesouros** com o famoso **Bubble Sort**! ✨

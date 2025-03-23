@@ -1,0 +1,95 @@
+---
+title: JavaScript - Operadores
+---
+
+**A Jornada dos Operadores Lógicos!**
+
+Olá, jovem explorador do código! Hoje, vamos desvendar os mistérios dos **operadores lógicos e de comparação**. Eles são como bússolas mágicas que ajudam nossos programas a tomar decisões com mais precisão!
+
+---
+
+### **1. As Portas Mágicas – Operadores de Comparação**
+
+Imagine que você encontrou um templo antigo com três portas misteriosas. Cada porta só se abre se uma condição for verdadeira:
+
+```java
+int idade = 12;
+
+if (idade >= 18) {
+    System.out.println("Você pode entrar na caverna dos sábios!");
+} else if (idade >= 12) {
+    System.out.println("Você pode entrar no templo dos aprendizes!");
+} else {
+    System.out.println("Você ainda é jovem demais para entrar!");
+}
+```
+
+Aqui, usamos os **operadores de comparação**:
+
+- `>` (maior que)
+- `<` (menor que)
+- `>=` (maior ou igual a)
+- `<=` (menor ou igual a)
+- `==` (igual a)
+- `!=` (diferente de)
+
+Esses operadores ajudam a comparar valores e decidir o que acontece a seguir!
+
+---
+
+### **2. O Enigma do Guardião – Operadores Lógicos**
+
+Agora imagine que um guardião impede sua passagem e só deixa você avançar se você tiver uma **chave de ouro** **e** uma **senha secreta**.
+
+```java
+boolean temChave = true;
+boolean sabeSenha = false;
+
+if (temChave && sabeSenha) {
+    System.out.println("O guardião permite sua passagem!");
+} else {
+    System.out.println("Você não pode passar. Falta algo!");
+}
+```
+
+Aqui, usamos os **operadores lógicos**:
+
+- `&&` (**E**) → Ambas as condições devem ser verdadeiras.
+- `||` (**OU**) → Apenas uma das condições precisa ser verdadeira.
+- `!` (**NÃO**) → Inverte o valor lógico (verdadeiro vira falso e vice-versa).
+
+Outro exemplo: e se o guardião deixar você passar se tiver a chave **ou** souber a senha?
+
+```java
+if (temChave || sabeSenha) {
+    System.out.println("O guardião permite sua passagem!");
+}
+```
+
+E se quisermos negar uma condição? Se o guardião só deixasse passar quem **não** tivesse uma chave:
+
+```java
+if (!temChave) {
+    System.out.println("O guardião permite sua passagem para os destemidos sem chave!");
+}
+```
+
+---
+
+### **Missão para você!**
+
+Crie um código onde um aventureiro só pode abrir um baú se tiver pelo menos **50 moedas de ouro** e **uma senha secreta**. Se ele tiver apenas as moedas ou apenas a senha, o baú permanece trancado. Se não tiver nada, um dragão aparece!
+
+Boa sorte, explorador do código! 🚀
+
+## Operadores
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/hZG9ODUdxHo?si=moltDnyrIB9lOj8-"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
