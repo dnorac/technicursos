@@ -1,8 +1,11 @@
 import Card from "@/components/card";
 import { readdir } from "node:fs/promises";
+import path from "node:path";
 
 export default async function Home() {
-  const courseFolders = await readdir("./src/content");
+  const courseFolders = await readdir(
+    path.join(process.cwd(), "src", "content")
+  );
   const results = await Promise.all(
     courseFolders.map((folder) => import(`@/content/${folder}/metadata.mdx`))
   );
