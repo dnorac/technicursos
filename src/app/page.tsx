@@ -16,6 +16,7 @@ export default async function Home() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {courses.map(({ title, description, cover }, i) => (
           <Card
+            number={i + 1}
             title={title}
             key={title}
             description={description}

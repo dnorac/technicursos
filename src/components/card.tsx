@@ -6,6 +6,7 @@ interface Props {
   description: string;
   imageUrl?: string;
   slug: string;
+  number: number;
 }
 
 export default function Card({
@@ -13,6 +14,7 @@ export default function Card({
   slug,
   title,
   description,
+  number,
 }: Props) {
   return (
     <Link
@@ -27,7 +29,9 @@ export default function Card({
         className="w-full aspect-video object-cover"
       />
       <div className="p-4 grid gap-3">
-        <h2 className="text-lg font-medium leading-none">{title}</h2>
+        <h2 className="text-lg font-medium leading-none">
+          {number}. {title}
+        </h2>
         <p className="opacity-50 text-sm">{description}</p>
       </div>
     </Link>
