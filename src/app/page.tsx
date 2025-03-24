@@ -9,8 +9,7 @@ export default async function Home() {
   const results = await Promise.all(
     courseFolders.map((folder) => import(`@/content/${folder}/metadata.mdx`))
   );
-  const courses = results.map((result) => result.frontmatter);
-  console.log(courses);
+  const courses = results.map((result) => result.frontmatter).toSorted();
   return (
     <>
       {/*  */}
