@@ -35,7 +35,7 @@ export default function Header() {
           <nav className="max-sm:hidden">
             <ul className="flex">
               <NavItem href="/">Cursos</NavItem>
-              {/* <NavItem href="/certificados">Certificados</NavItem> */}
+              <NavItem href="/certificados">Certificados</NavItem>
               <li className="flex items-center">
                 <SignedOut>
                   <SignInButton mode="modal">
