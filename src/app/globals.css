@@ -1,9 +1,5 @@
 @import "tailwindcss";
 @import "./theme.css";
-@import url("highlight.js/styles/stackoverflow-light.css") screen and
-  (prefers-color-scheme: light);
-@import url("highlight.js/styles/github-dark.css") screen and
-  (prefers-color-scheme: dark);
 @plugin "@tailwindcss/typography";
 
 :root {
