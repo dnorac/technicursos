@@ -14,7 +14,7 @@ function NavItem({ children, ...props }: ComponentProps<typeof HeaderLink>) {
 
 export default function Header() {
   return (
-    <header className="grid-breakout border-b border-border sticky top-0 bg-white dark:bg-black z-10">
+    <header className="grid-breakout border-b border-border sticky top-0 bg-white/70 dark:bg-black/80 backdrop-blur-md z-10">
       <div className="flex justify-between">
         <HeaderLink href="/" className="font-semibold">
           {config.APP_NAME}
