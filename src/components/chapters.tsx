@@ -4,9 +4,12 @@ import Link from "next/link";
 
 export function ChapterList({ children }: { children: ReactNode }) {
   return (
-    <ul className="divide-y divide-border mt-8 grid rounded-lg overflow-hidden">
-      {children}
-    </ul>
+    <div className="border-t border-border p-8 md:p-16">
+      <h2 className="leading-none font-bold text-3xl">Capítulos</h2>
+      <ul className="divide-y divide-border mt-8 grid rounded-lg overflow-hidden">
+        {children}
+      </ul>
+    </div>
   );
 }
 

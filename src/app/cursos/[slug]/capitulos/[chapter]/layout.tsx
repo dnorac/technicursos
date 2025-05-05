@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-import { loadChapters } from "@/chapters";
-import CourseViewAside from "@/components/course-view-aside";
-import { ArrowLeft } from "lucide-react";
+import CourseViewAside from "@/components/course-view/aside";
+import { loadChapters } from "@/services/courses";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface Props {
@@ -30,20 +30,20 @@ export default async function CourseLayout({ children, params }: Props) {
         <div className="grid grid-cols-2 gap-4 mt-4 sticky bottom-0 py-4 bg-gradient-to-b from-transparent to-white dark:to-black">
           {currentChapter !== "1" ? (
             <Link
-              className="p-4 inline-block bg-gray-100 dark:bg-gray-900 active:opacity-60 text-center rounded-lg"
+              className="p-4 button text-white flex items-center gap-3"
               href={`/cursos/${slug}/capitulos/${Number(currentChapter) - 1}`}
             >
-              Aula anterior
+              <ArrowLeft /> Aula anterior
             </Link>
           ) : (
             <span></span>
           )}
           {Number(currentChapter) !== chapters.length ? (
             <Link
-              className="p-4 inline-block bg-gray-100 dark:bg-gray-900 active:opacity-60 text-center rounded-lg"
+              className="p-4 button text-white flex items-center gap-3 justify-end"
               href={`/cursos/${slug}/capitulos/${Number(currentChapter) + 1}`}
             >
-              Próxima aula
+              Próxima aula <ArrowRight />
             </Link>
           ) : null}
         </div>

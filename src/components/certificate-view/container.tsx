@@ -28,7 +28,7 @@ export default function CertificateContainer({ children }: Props) {
         </div>
         <button
           onClick={() => reactToPrint()}
-          className="-order-1 font-medium justify-self-end uppercase p-2 hover:text-white hover:bg-blue-700 hover:shadow-lg shadow-blue-700/20 tracking-wider transition-all active:opacity-50 px-6 text-current/60 text-sm border cursor-pointer border-current/20 rounded-xl"
+          className="-order-1 justify-self-end button"
         >
           Imprimir
         </button>

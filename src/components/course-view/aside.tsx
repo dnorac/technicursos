@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/utils";
+import { cn } from "@/classnames";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { X } from "lucide-react";

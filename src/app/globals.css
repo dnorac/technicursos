@@ -14,8 +14,13 @@ body {
   a {
     @apply hover:text-primary active:opacity-50;
   }
+
+  input {
+    @apply rounded-lg cursor-pointer focus:cursor-auto p-4 py-2;
+  }
 }
-.cl-userButtonBox {
+
+.cl-userButton-root {
   padding-inline: 1rem;
 }
 

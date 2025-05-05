@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { ptBR } from "@clerk/localizations";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import { cn } from "@/classnames";
 import { fontFamily } from "@/fonts";
-import { cn } from "@/utils";
 
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";

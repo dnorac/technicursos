@@ -1,11 +1,10 @@
 import SyntaxHighlightedPost from "@/components/syntax-highlight";
+import type { Page } from "@/types";
 import { notFound } from "next/navigation";
 
-interface Props {
-  params: Promise<{ slug: string; chapter: string }>;
-}
-
-export default async function Page({ params }: Props) {
+export default async function Page({
+  params,
+}: Page<{ slug: string; chapter: string }>) {
   const { slug, chapter } = await params;
   try {
     const { default: Post, frontmatter } = await import(

@@ -1,6 +1,6 @@
 "use client";
+import { cn } from "@/classnames";
 import useScrollPosition from "@/hooks/use-scroll-position";
-import { cn } from "@/utils";
 import Link from "next/link";
 import { ComponentProps } from "react";
 
