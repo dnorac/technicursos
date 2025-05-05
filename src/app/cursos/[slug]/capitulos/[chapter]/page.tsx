@@ -1,3 +1,4 @@
+import SyntaxHighlightedPost from "@/components/syntax-highlight";
 import { notFound } from "next/navigation";
 
 interface Props {
@@ -13,7 +14,7 @@ export default async function Page({ params }: Props) {
     return (
       <>
         <h1>{frontmatter?.title ?? `Capítulo ${chapter}`}</h1>
-        <Post />
+        <SyntaxHighlightedPost post={<Post />} />
       </>
     );
   } catch {

@@ -1,0 +1,14 @@
+@theme {
+  --grid-cursos: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  --grid-chapters: [left-panel-start] 1fr [left-panel-end content-start] 75ch
+    [content-end index-start] 1fr [index-end];
+  --grid-badge: max-content 1fr;
+}
+
+@theme inline {
+  --color-primary: light-dark(var(--color-blue-700), var(--color-blue-300));
+  --color-border: light-dark(
+    var(--color-neutral-300),
+    var(--color-neutral-700)
+  );
+}

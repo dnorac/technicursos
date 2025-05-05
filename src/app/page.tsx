@@ -1,31 +1,11 @@
-import Card from "@/components/card";
-import { readdir } from "node:fs/promises";
-import path from "node:path";
+import Courses from "@/components/courses";
+import { loadCourses } from "@/services/courses";
 
 export default async function Home() {
-  const courseFolders = await readdir(
-    path.join(process.cwd(), "src", "content")
-  );
-  const results = await Promise.all(
-    courseFolders.map((folder) => import(`@/content/${folder}/metadata.mdx`))
-  );
-  const courses = results.map((result) => result.frontmatter).toSorted();
+  const courses = await loadCourses();
   return (
-    <>
-      {/*  */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {courses.map(({ title, description, cover }, i) => (
-          <Card
-            number={i + 1}
-            title={title}
-            key={title}
-            description={description}
-            slug={courseFolders[i]}
-            imageUrl={cover}
-          />
-        ))}
-      </div>
-      {/*  */}
-    </>
+    <div className="grid gap-4 grid-cols-(--grid-cursos) my-8 place-content-start card grid-popout">
+      <Courses courses={courses} />
+    </div>
   );
 }

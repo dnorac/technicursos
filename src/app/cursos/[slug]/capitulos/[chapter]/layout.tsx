@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { ReactNode } from "react";
 
 import { loadChapters } from "@/chapters";
-import { cn } from "@/utils";
+import CourseViewAside from "@/components/course-view-aside";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 interface Props {
@@ -17,16 +17,20 @@ export default async function CourseLayout({ children, params }: Props) {
   const { slug, chapter: currentChapter } = await params;
   const { chapters, metadata } = await loadChapters(slug);
   return (
-    <div className="grid gap-4 grid-cols-chapter">
-      <div></div>
-      <div>
-        <div className="border rounded-lg border-current/30 p-4 prose prose-neutral dark:prose-invert">
+    <div className="grid gap-4 lg:grid-cols-(--grid-chapters) lg:items-start lg:!col-[breakout] lg:px-8 my-8 grid-cols-subgrid">
+      <div className="col-[left-panel] lg:sticky top-20">
+        <Link href={`/cursos/${slug}`} className="flex gap-3 p-3 items-center">
+          <ArrowLeft /> Voltar
+        </Link>
+      </div>
+      <div className="col-[content]">
+        <div className="border rounded-lg border-border p-4 sm:p-8 prose max-w-none prose-neutral dark:prose-invert prose-pre:p-0 prose-code:!p-6">
           {children}
         </div>
         <div className="grid grid-cols-2 gap-4 mt-4 sticky bottom-0 py-4 bg-gradient-to-b from-transparent to-white dark:to-black">
           {currentChapter !== "1" ? (
             <Link
-              className="p-4 inline-block bg-gray-100 dark:bg-neutral-950 active:opacity-60 hover:bg-neutral-900 text-center rounded-lg"
+              className="p-4 inline-block bg-gray-100 dark:bg-gray-900 active:opacity-60 text-center rounded-lg"
               href={`/cursos/${slug}/capitulos/${Number(currentChapter) - 1}`}
             >
               Aula anterior
@@ -36,7 +40,7 @@ export default async function CourseLayout({ children, params }: Props) {
           )}
           {Number(currentChapter) !== chapters.length ? (
             <Link
-              className="p-4 inline-block bg-gray-100 dark:bg-gray-900 active:opacity-60 hover:bg-gray-800 text-center rounded-lg"
+              className="p-4 inline-block bg-gray-100 dark:bg-gray-900 active:opacity-60 text-center rounded-lg"
               href={`/cursos/${slug}/capitulos/${Number(currentChapter) + 1}`}
             >
               Próxima aula
@@ -44,33 +48,12 @@ export default async function CourseLayout({ children, params }: Props) {
           ) : null}
         </div>
       </div>
-      <aside className="border border-current/30 rounded-lg overflow-clip sticky top-4">
-        <Image
-          src={metadata.cover}
-          alt=""
-          width={300}
-          height={300}
-          className="w-full aspect-video object-cover"
-        />
-        <div className="flex flex-col divide-y divide-white/30">
-          {chapters.map((chapter, i) => {
-            const url = `/cursos/${slug}/capitulos/${i + 1}`;
-            return (
-              <Link
-                href={url}
-                key={url}
-                className={cn(
-                  "p-4 block hover:text-blue-300",
-                  parseInt(currentChapter) === i + 1 &&
-                    "text-blue-800 dark:text-blue-300 bg-gray-100 dark:bg-gray-950"
-                )}
-              >
-                {chapter}
-              </Link>
-            );
-          })}
-        </div>
-      </aside>
+      <CourseViewAside
+        coverImageUrl={metadata.cover}
+        slug={slug}
+        chapters={chapters}
+        currentChapter={parseInt(currentChapter)}
+      />
     </div>
   );
 }

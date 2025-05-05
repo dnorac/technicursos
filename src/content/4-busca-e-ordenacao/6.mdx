@@ -1,0 +1,84 @@
+---
+title: Estruturas de Repetição
+---
+
+**Missão: O Loop do Destino!**
+
+Olá, jovem aventureiro do código! Hoje, vamos explorar um poder incrível da programação: as **estruturas de repetição**! Com elas, podemos fazer ações acontecerem várias vezes sem precisar escrever o mesmo código repetidamente. Imagine que você está preso em um feitiço do tempo e precisa encontrar a saída. Para isso, usaremos os loops **while** e **for**!
+
+---
+
+### **1. O Loop Infinito do Mago – WHILE**
+
+Você está dentro da caverna do grande Mago do Tempo, e para sair, precisa responder corretamente a uma pergunta. Caso erre, ele faz a mesma pergunta de novo!
+
+```java
+boolean respostaCorreta = false;
+while (!respostaCorreta) {
+    System.out.println("Qual é a senha mágica?");
+    String resposta = entradaDoUsuario(); // Imagine que essa função lê o que o usuário digita
+
+    if (resposta.equals("abracadabra")) {
+        respostaCorreta = true;
+        System.out.println("Parabéns! O mago libera a saída da caverna.");
+    } else {
+        System.out.println("Errado! Tente novamente...");
+    }
+}
+```
+
+O loop **while** continua repetindo enquanto a condição for verdadeira. Aqui, o mago só libera a saída quando a resposta estiver correta!
+
+---
+
+### **2. O Desafio da Escadaria – FOR**
+
+Agora imagine que você precisa subir uma escada com 10 degraus. Em cada degrau, há uma pista para um tesouro escondido. Em vez de escrever "subir degrau" 10 vezes, podemos usar um **for**!
+
+```java
+for (int degrau = 1; degrau <= 10; degrau++) {
+    System.out.println("Você subiu para o degrau " + degrau);
+}
+System.out.println("Você chegou ao topo da escada!");
+```
+
+O **for** é ótimo quando sabemos quantas vezes algo deve acontecer. Aqui, subimos um degrau de cada vez até chegar ao topo!
+
+---
+
+### **3. WHILE ou FOR? Qual usar?**
+
+- **Use while** quando não souber exatamente quantas vezes precisará repetir algo (como esperar uma resposta correta).
+- **Use for** quando souber exatamente quantas vezes a ação precisa acontecer (como subir 10 degraus).
+
+---
+
+### **Missão para você!**
+
+Crie um código onde um personagem precisa recolher 5 cristais mágicos em uma caverna. Cada cristal tem um número e só pode ser pego na ordem certa. Como você faria isso usando um loop **for**?
+
+Boa sorte, aventureiro do código! 🚀
+
+## While
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/R-jwbPkJZvA?si=KGU6Wy62thTq28N0"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+></iframe>
+
+## For
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/wiUUASSieOE?si=GtxIoV6V05jOq0do"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+></iframe>

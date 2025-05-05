@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -19,20 +18,20 @@ export default function Card({
   return (
     <Link
       href={`/cursos/${slug}`}
-      className="border border-gray-300 rounded-lg overflow-clip dark:border-current/20 hover:border-current"
+      className="hover:bg-blue-50 active:!opacity-50 rounded-lg inline-grid overflow-clip border dark:border-neutral-800 dark:hover:bg-gray-900 border-neutral-200 card opacity-0"
     >
-      <Image
+      <img
         src={imageUrl}
         alt=""
         width={400}
         height={300}
-        className="w-full aspect-video object-cover"
+        className="aspect-video object-cover w-full"
       />
-      <div className="p-4 grid gap-3">
-        <h2 className="text-lg font-medium leading-none">
+      <div className="p-6 grid gap-3">
+        <h2 className="text-xl font-medium leading-none">
           {number}. {title}
         </h2>
-        <p className="opacity-50 text-sm">{description}</p>
+        <p className="text-current/70">{description}</p>
       </div>
     </Link>
   );

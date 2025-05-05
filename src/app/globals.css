@@ -1,12 +1,56 @@
 @import "tailwindcss";
-
+@import "./theme.css";
+@import url("highlight.js/styles/stackoverflow-light.css") screen and
+  (prefers-color-scheme: light);
+@import url("highlight.js/styles/github-dark.css") screen and
+  (prefers-color-scheme: dark);
 @plugin "@tailwindcss/typography";
 
-.grid-cols-chapter {
-  grid-template-columns: 1fr 65ch 1fr;
-  align-items: start;
+:root {
+  color-scheme: light dark;
 }
 
 body {
   font-family: var(--font-sans);
+}
+
+@layer base {
+  a {
+    @apply hover:text-primary active:opacity-50;
+  }
+}
+.cl-userButtonBox {
+  padding-inline: 1rem;
+}
+
+.grid-container {
+  --gap: 1rem;
+  --breakout: minmax(var(--gap), 1fr);
+  --popout: minmax(0, 5rem);
+  --content: min(80ch, 100% - var(--gap) * 2);
+
+  display: grid;
+  grid-template-columns:
+    [breakout-start] var(--breakout)
+    [popout-start] var(--popout)
+    [content-start] var(--content) [content-end]
+    var(--popout) [popout-end]
+    var(--breakout) [breakout-end];
+  grid-template-rows: auto 1fr auto;
+}
+
+.grid-container > * {
+  grid-column: content;
+}
+
+.grid-content {
+  grid-column: content;
+}
+
+.grid-popout {
+  grid-column: popout;
+}
+
+.grid-breakout {
+  grid-column: breakout;
 }
