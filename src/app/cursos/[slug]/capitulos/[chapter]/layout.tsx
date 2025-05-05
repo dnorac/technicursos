@@ -30,7 +30,7 @@ export default async function CourseLayout({ children, params }: Props) {
         <div className="grid grid-cols-2 gap-4 mt-4 sticky bottom-0 py-4 bg-gradient-to-b from-transparent to-white dark:to-black">
           {currentChapter !== "1" ? (
             <Link
-              className="p-4 button text-white flex items-center gap-3"
+              className="p-4 button text-white flex items-center gap-3 hover:bg-blue-700/70"
               href={`/cursos/${slug}/capitulos/${Number(currentChapter) - 1}`}
             >
               <ArrowLeft /> Aula anterior
@@ -40,7 +40,7 @@ export default async function CourseLayout({ children, params }: Props) {
           )}
           {Number(currentChapter) !== chapters.length ? (
             <Link
-              className="p-4 button text-white flex items-center gap-3 justify-end"
+              className="p-4 button text-white flex items-center gap-3 justify-end hover:bg-blue-700/70"
               href={`/cursos/${slug}/capitulos/${Number(currentChapter) + 1}`}
             >
               Próxima aula <ArrowRight />
