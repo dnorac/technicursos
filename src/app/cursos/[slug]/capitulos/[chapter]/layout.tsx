@@ -49,6 +49,7 @@ export default async function CourseLayout({ children, params }: Props) {
         </div>
       </div>
       <CourseViewAside
+        title={metadata.title}
         coverImageUrl={metadata.cover}
         slug={slug}
         chapters={chapters}
