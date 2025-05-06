@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/classnames";
-import useScrollPosition from "@/hooks/use-scroll-position";
+import useHeaderSticky from "@/hooks/use-header-sticky";
 import Link from "next/link";
 import { ComponentProps } from "react";
 
@@ -9,15 +9,11 @@ export default function HeaderLink({
   className,
   ...props
 }: ComponentProps<typeof Link>) {
-  const scrollPos = useScrollPosition();
+  const sticky = useHeaderSticky();
 
   return (
     <Link
-      className={cn(
-        "transition-all p-6",
-        scrollPos > 20 ? "py-4" : "py-6",
-        className
-      )}
+      className={cn("transition-all p-6", sticky ? "py-4" : "py-6", className)}
       {...props}
     >
       {children}
